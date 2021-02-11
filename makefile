@@ -32,4 +32,10 @@ pyinstaller:
 	popd && \
 	pip list && \
 	export PYTHONHASHSEED=1 && \
-	pyinstaller -y specs/app.spec
+	pyinstaller -y misc/app.spec
+
+dmg:
+	virtualenv --clear build/venv-dmg
+	source build/venv-dmg/bin/activate && \
+	pip install -r requirements/dmgbuild.txt && \
+	python scripts/build_dmg.py
