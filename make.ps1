@@ -1,6 +1,10 @@
-$cmd=$args[0]
+#requires -Version 3
 
-switch ($cmd) {
+param(
+    $Command
+)
+
+switch ($Command) {
     clean {
         Remove-Item build -Recurse -ErrorAction Ignore
         Remove-Item dist -Recurse -ErrorAction Ignore
