@@ -13,10 +13,18 @@ switch ($Command) {
 
     devenv {
         virtualenv --clear --python=python3.9.1 venv/dev
-        venv\dev\Scripts\activate.ps1
+        .\venv\dev\Scripts\activate.ps1
         pip install -r requirements\app.txt
         deactivate
         Write-Host "dev virtualenv made at venv/dev ('source venv/dev/bin/activate' to activate)"
+    }
+
+    ico {
+        virtualenv --clear --python=python3.9.1 build\icoenv
+        .\build\icoenv\Scripts\activate.ps1
+        pip install -r requirements\ico.txt
+        python scripts\build_ico.py
+        deactivate
     }
 
     pyinstaller {
@@ -27,4 +35,8 @@ switch ($Command) {
         pyinstaller -y misc\app.spec
         deactivate
     }
-} 
+
+    installer {
+        # TODO: wix installer stuff
+    }
+}
