@@ -29,7 +29,7 @@ switch ($Command) {
 
     pyinstaller {
         virtualenv --clear --python=python3.9.1 venv\pyinstaller
-        venv\pyinstaller\Scripts\activate.ps1
+        .\venv\pyinstaller\Scripts\activate.ps1
         pip install -r requirements\pyinstaller.txt
         pip install -r requirements\app.txt
         pyinstaller -y misc\app.spec
