@@ -32,7 +32,7 @@ switch ($Command) {
         .\venv\pyinstaller\Scripts\activate.ps1
         pip install -r requirements\pyinstaller.txt
         pip install -r requirements\app.txt
-        pyinstaller -y misc\app.spec
+        pyinstaller -y misc\app_win.spec
         deactivate
     }
 
