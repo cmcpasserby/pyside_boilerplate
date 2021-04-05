@@ -9,6 +9,7 @@ switch ($Command) {
         Remove-Item build -Recurse -ErrorAction Ignore
         Remove-Item dist -Recurse -ErrorAction Ignore
         Remove-Item venv\pyinstaller -Recurse -ErrorAction Ignore
+        # TODO: print info
     }
 
     devenv {
@@ -25,6 +26,7 @@ switch ($Command) {
         pip install -r requirements\ico.txt
         python scripts\build_ico.py
         deactivate
+        # TODO: print info
     }
 
     pyinstaller {
@@ -34,9 +36,12 @@ switch ($Command) {
         pip install -r requirements\app.txt
         pyinstaller -y misc\app_win.spec
         deactivate
+        # TODO: print info
     }
 
     installer {
         # TODO: wix installer stuff
+        $candle = Join-Path $env:WIX 'bin\candle.exe'
+        $light = Join-Path $env:WIX 'bin\light.exe'
     }
 }

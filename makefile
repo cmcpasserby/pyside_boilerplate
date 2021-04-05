@@ -32,7 +32,7 @@ pyinstaller:
 	popd && \
 	pip list && \
 	export PYTHONHASHSEED=1 && \
-	pyinstaller -y misc/app.spec
+	pyinstaller -y misc/app_macOS.spec
 
 dmg:
 	virtualenv --clear build/venv-dmg
