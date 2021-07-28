@@ -13,7 +13,7 @@ switch ($Command) {
     }
 
     devenv {
-        virtualenv --clear --python=python3.9.1 venv/dev
+        virtualenv --clear --python=python3.9.5 venv/dev
         .\venv\dev\Scripts\activate.ps1
         pip install -r requirements\app.txt
         deactivate
@@ -21,7 +21,7 @@ switch ($Command) {
     }
 
     ico {
-        virtualenv --clear --python=python3.9.1 build\icoenv
+        virtualenv --clear --python=python3.9.5 build\icoenv
         .\build\icoenv\Scripts\activate.ps1
         pip install -r requirements\ico.txt
         python scripts\build_ico.py
@@ -30,7 +30,7 @@ switch ($Command) {
     }
 
     pyinstaller {
-        virtualenv --clear --python=python3.9.1 venv\pyinstaller
+        virtualenv --clear --python=python3.9.5 venv\pyinstaller
         .\venv\pyinstaller\Scripts\activate.ps1
         pip install -r requirements\pyinstaller.txt
         pip install -r requirements\app.txt

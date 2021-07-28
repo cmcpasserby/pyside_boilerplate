@@ -6,13 +6,13 @@ clean:
 	rm -rf venv/pyinstaller
 
 devenv:
-	virtualenv --clear --python=python3.9.1 venv/dev && \
+	virtualenv --clear --python=python3.9.5 venv/dev && \
 	source venv/dev/bin/activate && \
 	pip install -r requirements/app.txt
 	echo "dev virtualenv made at venv/dev ('source venv/dev/bin/activate' to activate)"
 
 pyinstaller:
-	virtualenv --clear --python=python3.9.1 venv/pyinstaller && \
+	virtualenv --clear --python=python3.9.5 venv/pyinstaller && \
 	source venv/pyinstaller/bin/activate && \
 	pip install -r requirements/pyinstaller.txt && \
 	pip install -r requirements/app.txt && \
@@ -35,7 +35,7 @@ pyinstaller:
 	pyinstaller -y misc/app_macOS.spec
 
 dmg:
-	virtualenv --clear build/venv-dmg
+	virtualenv --clear --python=python3.9.5 build/venv-dmg
 	source build/venv-dmg/bin/activate && \
 	pip install -r requirements/dmgbuild.txt && \
 	python scripts/build_dmg.py
