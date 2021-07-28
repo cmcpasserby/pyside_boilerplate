@@ -1,6 +1,7 @@
 import sys
 
 from PySide2.QtWidgets import QApplication, QWidget, QVBoxLayout, QLabel, QPushButton
+import ui
 
 
 class Window(QWidget):
@@ -22,6 +23,7 @@ class Window(QWidget):
 
 
 if __name__ == '__main__':
+    ui.test()
     app = QApplication(sys.argv)
     window = Window()
     window.show()

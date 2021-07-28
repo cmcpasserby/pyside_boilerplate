@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['..\\app\\main.py'],
-             pathex=['F:\\projects\\rsg\\pyside_boilerplate'],
+             pathex=['..\\'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -26,7 +26,7 @@ exe = EXE(pyz,
           bootloader_ignore_signals=False,
           strip=True,
           upx=True,
-          console=False,
+          console=True,
           icon="..\\build\\ico\\app_icon.ico")
 coll = COLLECT(exe,
                a.binaries,
